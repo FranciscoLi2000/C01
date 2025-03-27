@@ -13,8 +13,8 @@ void	ft_rev_int_tab(int *tab, int size) /* 关于两个input的参数：tab是in
 		tmp = tab[i];
 		tab[i] = tab[j];
 		tab[j] = tmp;
+		j--;
 		i++;
 	}
 }
 /* 循环从头至尾，进行交换 */
-/* 这个交换逻辑类似于冒泡排序算法 */
