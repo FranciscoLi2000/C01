@@ -1,28 +1,30 @@
 #include <unistd.h>
-/* 根据题意，这个练习让我们实现冒泡排序算法 */
+
 void	ft_sort_int_tab(int *tab, int size)
 {
 	int	tmp;
 	int	i;
 	int	j;
+	int	swapped;  // Nueva variable para detectar si hubo intercambios
 
 	i = 0;
-	while (i < size - 1) /* 外循环：遍历数组 排序*/
+	while (i < size - 1)
 	{
+		swapped = 0;  // Reiniciamos en cada iteración
 		j = 0;
-		while (j < size - 1 - i)	/* 内循环：遍历数组 排序 */
+		while (j < size - 1 - i)
 		{
-			if (tab[j] > tab[j + 1])	/* 比较相邻数据 */
+			if (tab[j] > tab[j + 1])
 			{
-				tmp = tab[j];		/* swap */
+				tmp = tab[j];
 				tab[j] = tab[j + 1];
 				tab[j + 1] = tmp;
+				swapped = 1;  // Hubo intercambio
 			}
 			j++;
 		}
+		if (swapped == 0)  // Si no hubo intercambios, ya está ordenado
+			break;
 		i++;
 	}
 }
-
-/* 这个练习，可以先用一个循环看看有什么问题，你就了解为什么需要循环嵌套了 */
-/* 这个交换逻辑类似于冒泡排序算法 */
