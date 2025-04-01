@@ -24,7 +24,7 @@ void	ft_sort_int_tab(int *tab, int size)
 			j++;
 		}
 		if (swapped == 0)  // Si no hubo intercambios, ya está ordenado
-			break;
+			break ;
 		i++;
 	}
 }
