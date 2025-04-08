@@ -1,9 +1,26 @@
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
 }
-/* 这里，如果我们不声明变量的话，可以直接把想要的数值赋给指针
- * '*' 在这里也是一元运算符，即"解引用"，告诉指针指向一个我们想要的值
- * 通过这个方法，我们可以用指针修改一个变量存储的值 */
+
+int	main(void)
+{
+	int x = 0;
+	int *p1 = &x;
+	int **p2 = &p1;
+	int ***p3 = &p2;
+	int ****p4 = &p3;
+	int *****p5 = &p4;
+	int ******p6 = &p5;
+	int *******p7 = &p6;
+	int ********p8 = &p7;
+	int *********p9 = &p8;
+
+	ft_ultimate_ft(p9);
+	printf("%i\n", x);       // prints 42
+	printf("%p\n", (void *)p9); // prints address
+	return (0);
+}
